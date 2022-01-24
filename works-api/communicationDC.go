@@ -35,13 +35,14 @@ func postLogin(id string, password string) (*http.Response, error) {
 func postDCUser(user User) (*http.Response, error) {
 	var DCInfo = os.Getenv("DCUrl")
 	params := url.Values{
-		"username":  {user.Cn},
-		"password":  {user.Password},
-		"sn":        {user.Sn},
-		"givenName": {user.GivenName},
-		"email":     {user.Mail},
-		"phone":     {user.TelephoneNumber},
-		"title":     {user.Title},
+		"username":   {user.Cn},
+		"password":   {user.Password},
+		"sn":         {user.Sn},
+		"givenName":  {user.GivenName},
+		"email":      {user.Mail},
+		"phone":      {user.TelephoneNumber},
+		"title":      {user.Title},
+		"department": {user.Department},
 	}
 	log.Infof("paramsInfo = [%v]", params)
 	log.Infof("user = [%v]", user)
